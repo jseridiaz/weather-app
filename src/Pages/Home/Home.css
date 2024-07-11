@@ -1,0 +1,102 @@
+main {
+  padding: var(--rtc-padding-xs);
+}
+[id='section-container'] {
+  flex-wrap: wrap;
+  gap: var(--rtc-gap-xs);
+  justify-content: center;
+  max-width: 100%;
+  align-items: stretch;
+  padding: var(--rtc-padding-m) 0;
+}
+[id='section-container'] > article,
+[id='section-container'] > div {
+  min-width: 300px;
+  height: 400px;
+}
+article.article-home {
+  gap: var(--rtc-gap-s);
+  margin-top: var(--rtc-margin-s);
+  width: 70%;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--rtc-br);
+  background: linear-gradient(to right bottom, rgb(195, 255, 233), #0606c0);
+  padding: var(--rtc-padding-xs);
+}
+article:nth-child(2).article-home {
+  background: linear-gradient(to left bottom, rgb(195, 255, 233), #0606c0);
+  width: 44%;
+  align-self: flex-start;
+}
+
+article.article-home > h2 {
+  color: black;
+  font-size: 1.8rem;
+}
+article.article-home > p {
+  color: black;
+  font-size: 1.2rem;
+  width: 80%;
+}
+article.article-home > button {
+  width: 30%;
+  height: fit-content;
+  cursor: pointer;
+  align-self: center;
+  font-weight: 600;
+  color: aliceblue;
+}
+article.article-home > button > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: var(--rtc-padding-xs);
+  align-content: center;
+  font-size: 1.15rem;
+}
+.place-it {
+  margin-top: var(--rtc-margin-s);
+  width: 44%;
+  height: 300px;
+}
+.place-it > img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--rtc-br);
+  object-fit: cover;
+}
+@media (width< 845px) {
+  [id='section-container'] {
+    align-items: stretch;
+  }
+  .place-it {
+    height: auto;
+  }
+}
+@media (width < 630px) {
+  [id='second-info-home'] {
+    order: 2;
+  }
+  .place-it {
+    order: 1;
+  }
+
+  [id='section-container'] {
+    padding: var(--rtc-padding-m);
+  }
+  [id='section-container'] > article,
+  article:nth-child(2).article-home,
+  [id='section-container'] > div {
+    width: 100%;
+  }
+  article:nth-child(2).article-home > button {
+    width: 60%;
+    height: 60px;
+  }
+  article.article-home > button {
+    width: 50%;
+    height: 50px;
+  }
+}

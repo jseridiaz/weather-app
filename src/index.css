@@ -1,0 +1,128 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #242424;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* FONTS */
+  --rtc-primary-font: 'Work Sans', sans-serif;
+
+  /* BRANDING COLORS */
+  --rtc-color-1: #f9faff;
+  --rtc-color-2: #b6b6b6;
+  --rtc-color-3: #4a4a4a;
+  --rtc-color-4: #003f62;
+  --rtc-special-color-1: #a3fcb1;
+  --rtc-special-color-2: #fcc3a3;
+  --rtc-special-color-3: #a3f7fc;
+  --rtc-special-color-4: #fca3a3;
+  --rtc-special-color-5: #f5e6ff;
+  --rtc-special-color-6: #7be498;
+  --rtc-special-color-7: #f7c29b;
+
+  /* BACKGROUND-COLORS */
+  --rtc-primary-bg: var(--rtc-color-1);
+
+  /* TEXT-COLORS */
+  --rtc-normal-text: var(--rtc-color-1);
+  --rtc-primary-text: var(--rtc-color-3);
+  --rtc-secondary-text: var(--rtc-color-4);
+
+  /* BORDER-COLORS */
+  --rtc-primary-border: 1px solid var(--rtc-color-2);
+
+  /* BORDER RADIUS */
+  --rtc-br: 8px;
+
+  /* SPACINGS */
+  --rtc-margin-xs: 10px;
+  --rtc-margin-s: 20px;
+  --rtc-margin-m: 30px;
+  --rtc-margin-l: 40px;
+  --rtc-margin-xl: 50px;
+  --rtc-margin-section: 100px;
+
+  --rtc-padding-xxs: 5px;
+  --rtc-padding-xs: 10px;
+  --rtc-padding-s: 20px;
+  --rtc-padding-m: 30px;
+  --rtc-padding-l: 40px;
+  --rtc-padding-xl: 50px;
+
+  --rtc-gap-xs: 10px;
+  --rtc-gap-s: 20px;
+  --rtc-gap-m: 30px;
+  --rtc-gap-l: 40px;
+  --rtc-gap-xl: 50px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+p {
+  font-weight: 600;
+}
+ul,
+ol {
+  list-style: none;
+}
+main {
+  justify-content: center;
+  min-height: 80svh;
+}
+header a.active {
+  background-color: rgb(1, 1, 155);
+}
+a {
+  text-decoration: none;
+}
+a:visited:not(header a) {
+  color: inherit;
+}
+.none {
+  display: none;
+}
+body {
+  min-height: 100svh;
+  max-width: 100svw;
+}
+footer {
+  background-color: white;
+  width: 100%;
+  justify-content: space-around;
+}
+
+[id='root'] {
+  max-width: 100%;
+  width: 100%;
+  min-height: 100svh;
+}
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

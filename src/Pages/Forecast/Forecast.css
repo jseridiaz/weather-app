@@ -1,0 +1,11 @@
+[id='section-forecast-weather'] {
+  gap: var(--rtc-gap-s);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+[id='section-forecast-weather'] > article {
+  background-color: aliceblue;
+  padding: var(--rtc-padding-s);
+  height: fit-content;
+}

@@ -1,0 +1,23 @@
+[id='about-main'] {
+  flex-wrap: wrap;
+}
+[id='section-abaut-us'] {
+  gap: var(--rtc-gap-m);
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: start;
+  justify-content: center;
+}
+
+[id='section-abaut-us'] > article {
+  padding: var(--rtc-padding-xs);
+  width: 80%;
+  min-height: fit-content;
+}
+[id='section-abaut-us'] > article > h2 {
+  font-size: 2.4rem;
+  margin-bottom: var(--rtc-margin-l);
+}
+[id='section-abaut-us'] * {
+  color: white;
+}
