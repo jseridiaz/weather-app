@@ -17,6 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/forecast/:city/:days' element={<Forecast />} />
         <Route path='/about' element={<AboutUs />} />
       </Route>
+      {/* Comments */}
     </Routes>
   </BrowserRouter>
 )
