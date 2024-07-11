@@ -160,7 +160,7 @@ const SelectWeather = () => {
             inputId='days-forecast'
             inputName='Forecast Weather for:'
             inputType='number'
-            maxNumber={7}
+            maxNumber={6}
             minNumber={0}
             needed={true}
           />

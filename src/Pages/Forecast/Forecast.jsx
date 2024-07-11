@@ -55,29 +55,27 @@ const Forecast = () => {
         idName='section-forecast-weather'
         className={'flex-container'}
       >
-        {console.log(forecast != [] ? forecast : 'ok')}
-        {forecast &&
-          forecast.map((el, i) => (
-            <InfoResult
-              key={i}
-              numberDiv={5}
-              arrayParrafs={[
-                `Average Temperature:${el.values.temperatureApparentAvg}°`,
-                `Clouds:${el.values.cloudCoverAvg}%`,
-                `Rain probability:${el.values.precipitationProbabilityAvg}%`,
-                `Average Humidity: ${el.values.humidityAvg}`,
-                `Predicted Wind: ${el.values.windSpeedAvg}kmh`
-              ]}
-              idName={`forecast-day-${i}`}
-              title={
-                i == 0
-                  ? 'Tomorrow'
-                  : new Date(
-                      new Date(todayFormat).setDate(todayFormat.getDate() + i)
-                    ).toDateString()
-              }
-            />
-          ))}
+        {forecast.map((el, i) => (
+          <InfoResult
+            key={i}
+            numberDiv={5}
+            arrayParrafs={[
+              `Average Temperature:${el.values.temperatureApparentAvg}°`,
+              `Clouds:${el.values.cloudCoverAvg}%`,
+              `Rain probability:${el.values.precipitationProbabilityAvg}%`,
+              `Average Humidity: ${el.values.humidityAvg}`,
+              `Predicted Wind: ${el.values.windSpeedAvg}kmh`
+            ]}
+            idName={`forecast-day-${i}`}
+            title={
+              i == 0
+                ? 'Tomorrow'
+                : new Date(
+                    new Date(todayFormat).setDate(todayFormat.getDate() + i)
+                  ).toDateString()
+            }
+          />
+        ))}
       </SectionContainer>
     </>
   )
