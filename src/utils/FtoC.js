@@ -1,1 +1,1 @@
-export const fToC = (temp) => (temp - 32) * (5 / 9)
+export const fToC = (temp) => Math.floor((temp - 32) * (5 / 9))

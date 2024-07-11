@@ -7,11 +7,12 @@ import InfoResult from '../../Components/InfoResult/InfoResult'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../Components/Button/Button'
 import LabelInput from '../../Components/LabelInput/LabelInput'
+import { fToC } from '../../utils/FtoC'
 
 const SelectWeather = () => {
   const [search, setSearch] = useState('')
   const [imgResult, setImgResult] = useState('')
-  const [cityResult, setCityResult] = useState({})
+  const [cityResult, setCityResult] = useState('')
   const [weather, setWeather] = useState({})
 
   const navigate = useNavigate()
@@ -52,15 +53,31 @@ const SelectWeather = () => {
   }, [search])
 
   useEffect(() => {
-    if (search != '') {
-      const weatherResult = fetch(
-        `http://api.weatherapi.com/v1/current.json?q=${cityResult.lat},${
-          cityResult.lon
-        }&key=${import.meta.VITE_KEY_API_WEATHER_TWO}`
+    cityResult &&
+      fetch(
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${
+          cityResult.lat
+        },${cityResult.lon}?key=${import.meta.env.VITE_KEY_API_WEATHER_TWO}`
       )
         .then((res) => res.json())
-        .then((res) => setWeather(res))
-    }
+        .then((res) => {
+          console.log(res)
+          setWeather(res)
+        })
+
+    // fetch(
+    //   `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${
+    //     cityResult.lat
+    //   },${cityResult.lon}?key=${import.meta.env.VITE_KEY_API_WEATHER_TWO}
+    //   `
+    // )
+    //   .then((res) => {
+    //     console.log(res)
+    //     res.json()
+    //   })
+    //   .then((res) => {
+    //     setWeather(res)
+    //   })
   }, [cityResult])
 
   return (
@@ -101,34 +118,39 @@ const SelectWeather = () => {
           idName='container-data-city'
           className={!search ? 'none' : ''}
         />
-
-        <InfoResult
-          className={`flex-container-column ${!search ? 'none' : ''}`}
-          numberDiv={3}
-          arrayParrafs={[
-            weather.current?.temp_c + '°',
-            'Feels like:  ' + weather.current?.feelslike_c + '°',
-            'Lowest C°: ' + weather.current?.dewpoint_c + '°'
-          ]}
-          idName='container-Temperatur-city'
-          title='Temperatur'
-        />
-        <InfoResult
-          className={`flex-container-column ${!search ? 'none' : ''}`}
-          numberDiv={3}
-          arrayParrafs={[
-            `Currently: ${weather.current?.condition.text}`,
-            `Humidity:  ${weather.current?.humidity}%`,
-            `Wind:  ${weather.current?.wind_kph} kmh`
-          ]}
-          idName='container-conditions-city'
-          title=' Weather Conditions'
-        >
-          <Img
+        {weather?.currentConditions && (
+          <>
+            <InfoResult
+              className={`flex-container-column ${!search ? 'none' : ''}`}
+              numberDiv={3}
+              arrayParrafs={[
+                fToC(weather.currentConditions.temp) + '°',
+                'Feels like:  ' +
+                  fToC(weather.currentConditions.feelslike) +
+                  '°',
+                'Lowest °: ' + fToC(weather.currentConditions.dew) + '°'
+              ]}
+              idName='container-Temperatur-city'
+              title='Temperatur'
+            />
+            <InfoResult
+              className={`flex-container-column ${!search ? 'none' : ''}`}
+              numberDiv={3}
+              arrayParrafs={[
+                `Currently: ${weather.description}`,
+                `Humidity:  ${weather.currentConditions.humidity}%`,
+                `Wind:  ${weather.currentConditions.windspeed} kmh`
+              ]}
+              idName='container-conditions-city'
+              title=' Weather Conditions'
+            >
+              {/* <Img
             src={`https:${weather.current?.condition.icon}`}
             alt={`icon-${weather.current?.condition.text}`}
-          />
-        </InfoResult>
+          /> */}
+            </InfoResult>
+          </>
+        )}
         <form
           id='form-forecast-weather'
           onSubmit={formFunction}

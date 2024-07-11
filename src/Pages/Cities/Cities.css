@@ -209,7 +209,7 @@ h2.showed {
   [id='section-result-weather']
     > article:nth-of-type(1)
     ~ article[id='container-Temperatur-city'] {
-    margin-top: calc(var(--rtc-margin-section) + var(--rtc-margin-s));
+    margin-top: calc(var(--rtc-margin-section) + var(--rtc-margin-s) + 50px);
   }
   [id='section-result-weather'] > [id='form-forecast-weather'] label {
     min-width: 162.15px;
