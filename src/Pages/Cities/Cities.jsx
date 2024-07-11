@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import H2 from '../../Components/H2/H2'
-import LabelInput from '../../Components/LabelInput/LabelInput'
 import SectionContainer from '../../Components/section/SectionContainer'
 import './Cities.css'
 import Img from '../../Components/Img/Img'
 import InfoResult from '../../Components/InfoResult/InfoResult'
 import { useNavigate } from 'react-router-dom'
 import Button from '../../Components/Button/Button'
+import LabelInput from '../../Components/LabelInput/LabelInput'
 
 const SelectWeather = () => {
   const [search, setSearch] = useState('')
