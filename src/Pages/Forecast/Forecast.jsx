@@ -60,10 +60,9 @@ const Forecast = () => {
             key={i}
             numberDiv={5}
             arrayParrafs={[
-              `Average Temperature:${el.values.temperatureApparentAvg}°`,
-              `Clouds:${el.values.cloudCoverAvg}%`,
-              `Rain probability:${el.values.precipitationProbabilityAvg}%`,
-              `Average Humidity: ${el.values.humidityAvg}`,
+              `Temperature:${Math.round(el.values.temperatureApparentAvg)}°`,
+              `Rain probability:${el.values.precipitationProbabilityAvg * 10}%`,
+              `Humidity: ${el.values.humidityAvg}%`,
               `Predicted Wind: ${el.values.windSpeedAvg}kmh`
             ]}
             idName={`forecast-day-${i}`}

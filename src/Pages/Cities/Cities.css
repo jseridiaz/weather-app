@@ -59,6 +59,7 @@
   justify-content: space-around;
   align-items: end;
   padding: 1.5rem;
+  height: 600px;
 }
 [id='section-result-weather'] > div {
   position: absolute;
@@ -80,7 +81,7 @@
 [id='section-result-weather'] > article:nth-of-type(1) ~ article,
 [id='section-result-weather'] > [id='form-forecast-weather'] {
   width: 30%;
-  height: 50%;
+  height: 300px;
   justify-content: space-around;
   color: black;
   border-radius: 1rem;
@@ -140,6 +141,9 @@ h2.showed {
   font-size: 1.4rem;
   width: 100%;
 }
+[id='container-conditions-city'] > div > p {
+  padding-inline: 1rem;
+}
 [id='section-result-weather'] > [id='form-forecast-weather'].none {
   display: none;
 }
@@ -157,20 +161,32 @@ h2.showed {
   text-align: center;
   padding: 20px 5px;
   font-size: 1.2rem;
-  width: 50%;
+  width: 80%;
 }
 
 [id='section-result-weather'] > [id='form-forecast-weather'] button {
   height: 30%;
-  width: 70%;
+  width: 100%;
   align-self: center;
   font-weight: 600;
   padding: 10px;
   font-size: 1.05rem;
 }
-@media (width < 860px) {
+@media (width<900px) {
   [id='section-form-city'] {
     width: 80%;
+  }
+  [id='section-result-weather'] {
+    padding: 10px;
+  }
+}
+@media (width<880px) {
+  [id='section-result-weather'] > [id='form-forecast-weather'] button {
+    font-size: 0.9rem;
+  }
+}
+@media (width < 860px) {
+  [id='section-form-city'] {
     height: 300px;
     gap: var(--rtc-gap-xs);
     justify-content: center;
@@ -201,11 +217,25 @@ h2.showed {
     gap: var(--rtc-gap-m);
     max-height: fit-content;
     height: fit-content;
+    width: 80%;
+  }
+  /* [id='container-conditions-city'] {
+    margin-top: 100px;
+  } */
+  [id='section-result-weather']
+    > article:nth-of-type(1)
+    ~ article[id='container-Temperatur-city'] {
+    height: 300px;
   }
   [id='section-result-weather'] > article:nth-of-type(1) ~ article,
   [id='section-result-weather'] > [id='form-forecast-weather'] {
     min-width: 200px;
+    height: 300px;
   }
+  /* [id='section-result-weather'] > article:nth-of-type(1) ~ article,
+  [id='section-result-weather'] > [id='form-forecast-weather'] {
+    height: 300px;
+  } */
   [id='section-result-weather']
     > article:nth-of-type(1)
     ~ article[id='container-Temperatur-city'] {

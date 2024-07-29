@@ -69,7 +69,9 @@
   box-sizing: border-box;
   max-width: 100%;
 }
-
+a:link {
+  color: white;
+}
 p {
   font-weight: 600;
 }
@@ -80,6 +82,8 @@ ol {
 main {
   justify-content: center;
   min-height: 80svh;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 header a.active {
   background-color: rgb(1, 1, 155);
@@ -92,6 +96,10 @@ a:visited:not(header a) {
 }
 .none {
   display: none;
+}
+[id='container-data-city'].margin-center {
+  top: 50%;
+  width: 100%;
 }
 body {
   min-height: 100svh;
@@ -125,4 +133,17 @@ footer {
   button {
     background-color: #f9f9f9;
   }
+}
+@media (width< 900px) {
+  .margin-center {
+    margin-top: 0px;
+  }
+}
+@media (width< 400px) {
+  .margin-center {
+    margin-top: 0px;
+  }
+}
+[id='container-data-city'].margin-center {
+  font-size: 18px;
 }

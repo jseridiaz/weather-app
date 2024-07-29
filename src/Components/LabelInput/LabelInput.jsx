@@ -6,7 +6,8 @@ const LabelInput = ({
   inputType = 'text',
   maxNumber,
   minNumber,
-  needed
+  needed,
+  reference
 }) => {
   return (
     <>
@@ -18,6 +19,7 @@ const LabelInput = ({
           max={maxNumber}
           min={minNumber}
           required={needed ? true : false}
+          ref={reference}
         />
       </div>
     </>
