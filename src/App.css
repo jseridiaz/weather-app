@@ -167,6 +167,9 @@ footer > div > ul > li img {
   }
 }
 @media (width < 476px) {
+  footer {
+    padding: var(--rtc-padding-xs);
+  }
   footer > div:nth-of-type(1) > ul {
     justify-content: center;
   }

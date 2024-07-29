@@ -187,9 +187,10 @@ h2.showed {
 }
 @media (width < 860px) {
   [id='section-form-city'] {
-    height: 300px;
+    height: 350px;
     gap: var(--rtc-gap-xs);
     justify-content: center;
+    padding-bottom: 30px;
   }
   [id='container-data-city'] {
     width: 80%;
@@ -210,6 +211,7 @@ h2.showed {
   }
   h2.showed {
     top: 0%;
+    top: -180%;
   }
   [id='section-result-weather'] {
     flex-wrap: wrap;
