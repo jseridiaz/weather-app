@@ -1,3 +1,6 @@
 [id='section-result-weather'] > button.none {
   display: none;
 }
+[id='second-info-home'] > button {
+  width: 50%;
+}

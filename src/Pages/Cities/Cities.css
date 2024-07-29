@@ -219,9 +219,6 @@ h2.showed {
     height: fit-content;
     width: 80%;
   }
-  /* [id='container-conditions-city'] {
-    margin-top: 100px;
-  } */
   [id='section-result-weather']
     > article:nth-of-type(1)
     ~ article[id='container-Temperatur-city'] {
@@ -232,10 +229,7 @@ h2.showed {
     min-width: 200px;
     height: 300px;
   }
-  /* [id='section-result-weather'] > article:nth-of-type(1) ~ article,
-  [id='section-result-weather'] > [id='form-forecast-weather'] {
-    height: 300px;
-  } */
+
   [id='section-result-weather']
     > article:nth-of-type(1)
     ~ article[id='container-Temperatur-city'] {
@@ -257,6 +251,15 @@ h2.showed {
     height: fit-content;
   }
 }
+@media (width < 475px) {
+  article[id='first-info-home'] {
+    height: 500px;
+  }
+  [id='section-result-weather'] > h2.showed {
+    font-size: 1.3rem;
+  }
+}
+
 @media (width< 600px) and (height < 571px) {
   [id='cities-main'] {
     height: fit-content;
