@@ -177,4 +177,7 @@ footer > div > ul > li img {
     width: 300px;
     min-width: fit-content;
   }
+  [id='container-contact-email'] > ul > li > p {
+    font-size: 14px;
+  }
 }
