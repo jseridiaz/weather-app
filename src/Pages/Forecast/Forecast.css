@@ -3,9 +3,11 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 [id='section-forecast-weather'] > article {
   background-color: aliceblue;
   padding: var(--rtc-padding-s);
   height: fit-content;
+  min-width: 240px;
 }
