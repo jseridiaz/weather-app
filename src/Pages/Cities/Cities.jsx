@@ -37,7 +37,6 @@ const SelectWeather = () => {
               return res.json()
             })
             .then((res) => {
-              // console.log(res)
               res.features.length == 0
                 ? setCityResult('')
                 : !res
@@ -76,7 +75,6 @@ const SelectWeather = () => {
       )
         .then((res) => res.json())
         .then((res) => {
-          console.log(res)
           setWeather(res)
         })
     } else {
@@ -86,9 +84,6 @@ const SelectWeather = () => {
 
   return (
     <>
-      {console.log(cityResult, weather)}
-      {console.log(cityChoised.current?.value)}
-
       <SectionContainer
         className={'flex-container-column'}
         idName='section-form-city'
@@ -98,7 +93,6 @@ const SelectWeather = () => {
           id='form-weather-forecast'
           onSubmit={(e) => {
             e.preventDefault()
-            console.log(cityChoised)
             setSearch(cityChoised?.current.value)
           }}
         >

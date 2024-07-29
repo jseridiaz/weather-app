@@ -6,12 +6,10 @@ import SectionContainer from '../../Components/section/SectionContainer'
 
 const Forecast = () => {
   const location = useLocation()
-  console.log(history.state)
-  console.log(location.pathname.split('/'))
+
   const { city, country, lat, lon } = history.state.usr.cityResult
   const pathDays = location.pathname.split('/').at(-1).toString()
-  console.log(pathDays)
-  console.log(city, country, lat, lon)
+
   const [days, setDays] = useState(parseInt(pathDays))
   const [forecast, setForecast] = useState([])
   const today = Date.now()
@@ -19,10 +17,7 @@ const Forecast = () => {
   const dateformated = `${todayFormat.getDate()}/${todayFormat.getMonth() + 1}`
   const tomorrow = new Date(todayFormat).setDate(todayFormat.getDate() + 1)
   const dayI = (i) => new Date(todayFormat).setDate(todayFormat.getDate() + i)
-  console.log(dateformated)
-  console.log(new Date(tomorrow).toDateString())
-  console.log(todayFormat.toDateString())
-  // console.log(today.toDateString())
+
   const [currentDay, setCurrentDay] = useState(new Date(Date.now()))
 
   useEffect(() => {
@@ -34,7 +29,6 @@ const Forecast = () => {
           }`
         )
         const dataForJson = await dataForecast.json()
-        console.log(dataForJson)
         return dataForJson.timelines.daily.slice(0, days)
       } catch (error) {
         console.log(error)
@@ -44,13 +38,11 @@ const Forecast = () => {
       const forecastNew = await getForecast()
       setForecast(forecastNew)
     }
-    console.log(currentDay.toDateString())
     setNewForecast()
   }, [])
 
   return (
     <>
-      {console.log(forecast)}
       <SectionContainer
         idName='section-forecast-weather'
         className={'flex-container'}
