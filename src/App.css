@@ -158,6 +158,9 @@ footer > div > ul > li img {
   align-items: center;
 }
 @media (width <601px) {
+  #main {
+    padding: 0;
+  }
   header {
     justify-content: center;
   }

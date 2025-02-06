@@ -7,9 +7,7 @@ function App() {
   const location = useLocation()
 
   useEffect(() => {
-    mainId = setMainId(
-      `${location.pathname.slice(1).replaceAll('/', '-')}-main`
-    )
+    mainId = setMainId(`${location.pathname.slice(1).replaceAll('/', '-')}main`)
   }, [location])
 
   return (

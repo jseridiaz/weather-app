@@ -7,7 +7,7 @@ main {
   justify-content: center;
   max-width: 100%;
   align-items: stretch;
-  padding: var(--rtc-padding-m) 0;
+  padding: var(--rtc-padding-s) 0;
 }
 [id='section-container'] > article,
 [id='section-container'] > div {
@@ -84,7 +84,7 @@ article.article-home > button > a {
   }
 
   [id='section-container'] {
-    padding: var(--rtc-padding-m);
+    padding: var(--rtc-padding-s);
   }
   [id='section-container'] > article,
   article:nth-child(2).article-home,
@@ -92,6 +92,7 @@ article.article-home > button > a {
     width: 100%;
   }
   article:nth-child(2).article-home > button {
+    align-content: center;
     width: 60%;
     height: 60px;
   }
