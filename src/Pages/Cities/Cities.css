@@ -45,6 +45,7 @@
 [id='section-form-city'] form div input {
   width: 80%;
   padding: var(--rtc-padding-xxs);
+  background-color: whitesmoke;
 }
 [id='section-form-city'] form button {
   width: 50%;
@@ -255,7 +256,11 @@ h2.showed {
 }
 @media (width < 475px) {
   article[id='first-info-home'] {
-    height: 500px;
+    height: fit-content;
+    padding: var(--rtc-padding-s);
+    button {
+      background-color: var(--rtc-color-3);
+    }
   }
   [id='section-result-weather'] > h2.showed {
     font-size: 1.3rem;

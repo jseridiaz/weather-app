@@ -98,5 +98,8 @@ article.article-home > button > a {
   article.article-home > button {
     width: 50%;
     height: 50px;
+    background-color: var(--rtc-color-3);
+    border: none;
+    align-content: center;
   }
 }
