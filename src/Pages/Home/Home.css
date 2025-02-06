@@ -1,4 +1,6 @@
-main {
+main,
+body {
+  background-color: var(--rtc-color-3);
   padding: var(--rtc-padding-xs);
 }
 [id='section-container'] {
@@ -47,6 +49,7 @@ article.article-home > button {
   align-self: center;
   font-weight: 600;
   color: aliceblue;
+  border: none;
 }
 article.article-home > button > a {
   display: inline-block;
@@ -55,6 +58,7 @@ article.article-home > button > a {
   padding: var(--rtc-padding-xs);
   align-content: center;
   font-size: 1.15rem;
+  background-color: var(--rtc-color-3);
 }
 .place-it {
   margin-top: var(--rtc-margin-s);
